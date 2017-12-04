@@ -1,4 +1,4 @@
-// generated on 2017-11-29 using generator-webapp 3.0.1
+// generated on 2017-12-04 using generator-webapp 3.0.1
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
@@ -98,7 +98,8 @@ gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
-      port: 9000,
+      host: process.env.IP,
+      port: process.env.PORT,
       server: {
         baseDir: ['.tmp', 'app'],
         routes: {
